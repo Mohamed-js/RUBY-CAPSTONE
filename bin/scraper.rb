@@ -3,8 +3,14 @@ require_relative '../lib/scraper_class.rb'
 # Initialize the instance
 scraper = Scraper.new
 
-# USE crawl method and saving its information ::
-
+# WELCOME ::
+puts "******************************************"
+puts "Welcome to scruby doby doooooooooooooooooo ^_^"
+puts ""
+puts "******************************************"
+puts "**This version is for testing and reviewing**"
+puts ""
+puts "******************************************"
 # 1-enter Link of page
 puts "Enter the page link 'url' to be scraped:"
 link = gets.chomp
