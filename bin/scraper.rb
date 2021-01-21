@@ -4,13 +4,13 @@ require_relative '../lib/scraper_class.rb'
 scraper = Scraper.new
 
 # WELCOME ::
-puts "******************************************"
-puts "Welcome to scruby doby doooooooooooooooooo ^_^"
-puts ""
-puts "******************************************"
-puts "**This version is for testing and reviewing**"
-puts ""
-puts "******************************************"
+puts '******************************************'
+puts 'Welcome to scruby ruby doooooooooooooooooo ^_^'
+puts ''
+puts '******************************************'
+puts '**This version is for testing and reviewing**'
+puts ''
+puts '******************************************'
 # 1-enter Link of page
 puts "Enter the page link 'url' to be scraped:"
 link = gets.chomp
@@ -69,14 +69,6 @@ goods = scraper.img_in_data_src(me, name, product_page, img, price)
 ###################################################################
 
 # 8- Display Items
-goods.each do |good|
-  puts ' ------------- '
-  puts 'Name    :: '.yellow + (good[:name]).to_s
-  puts 'Price   :: '.yellow + (good[:price]).to_s
-  puts 'Img-src :: '.yellow + (good[:img_src]).to_s
-  puts 'Product :: '.yellow + (good[:link]).to_s
-end
-
-puts 'Successfully done...'.green
+display_goods(goods)
 
 # ruby bin/scraper.rb
