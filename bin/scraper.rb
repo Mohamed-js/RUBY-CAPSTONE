@@ -71,4 +71,4 @@ goods = scraper.img_in_data_src(me, name, product_page, img, price)
 # 8- Display Items
 display_goods(goods)
 
-# ruby bin/scraper.rb
+
