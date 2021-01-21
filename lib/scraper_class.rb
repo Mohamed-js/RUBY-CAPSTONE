@@ -1,5 +1,5 @@
-require 'httparty'
-require 'nokogiri'
+require 'HTTParty'
+require 'Nokogiri'
 require 'byebug'
 require 'colorize'
 
