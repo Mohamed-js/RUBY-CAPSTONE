@@ -1,4 +1,4 @@
-require 'nokogiri'
+require 'Nokogiri'
 require 'httparty'
 require 'byebug'
 require 'colorize'
