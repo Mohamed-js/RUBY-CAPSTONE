@@ -1,8 +1,8 @@
 # Class Scraper
-require 'nokogiri'
-require 'httparty'
-require 'byebug'
-require 'colorize'
+require_relative 'nokogiri'
+require_relative 'httparty'
+require_relative 'byebug'
+require_relative 'colorize'
 
 # Class Scraper
 class Scraper
