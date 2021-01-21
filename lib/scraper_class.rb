@@ -1,6 +1,5 @@
-# require files 
-require 'httparty'
 require 'nokogiri'
+require 'httparty'
 require 'byebug'
 require 'colorize'
 
