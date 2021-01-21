@@ -1,4 +1,4 @@
-require_relative '../lib/scraper_class.rb'
+require '../lib/scraper_class.rb'
 
 # Variables for testing
 link = 'https://deals.souq.com/eg-en/smart-tvs/c/15236'
@@ -11,14 +11,14 @@ query = scraper.query(link)
 data = scraper.img_in_data_src(query, name, product_page, img, price)
 
 describe Scraper do
-  # Test Query Method
+  # 1- Test Query Method
   describe '#query' do
     # Check if an object
     it 'should return true' do
       expect(query).to be_kind_of(Object)
     end
 
-    # Check if returns a Nokogiri object
+    # 2- Check if returns a Nokogiri object
     it 'the elememt parent class should be a Nokogori NodeSet' do
       type1 = Nokogiri::XML::NodeSet
       type2 = query.class.ancestors[0]
@@ -26,14 +26,14 @@ describe Scraper do
     end
   end
 
-  # Test img_in_src Method
+  # 3- Test img_in_src Method
   describe '#img_in_src' do
     # The result type
     it 'should return an array' do
       expect(data).to be_a Array
     end
 
-    # Check the content != empty
+    # 4- Check the content != empty
     it "shouldn't be empty" do
       expect(data.size).to be > 0
     end
