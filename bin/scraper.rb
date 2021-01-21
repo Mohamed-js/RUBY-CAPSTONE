@@ -11,42 +11,66 @@ link = gets.chomp
 p link
 
 # 2-enter SELECTOR of the name of product
-puts 'Enter the page SELECTOR of the name:'
+puts 'Enter the page Direct SELECTOR of the name:'
 name = gets.chomp
 p name
 
 # 3-enter  SELECTOR of the <a> link of product
-puts "Enter the page SELECTOR of the link 'product page':"
+puts "Enter the page Direct SELECTOR of the link 'product page':"
 product_page = gets.chomp
 p product_page
 
 # 4-enter  SELECTOR of the img of product
-puts 'Enter the page SELECTOR of the img element:'
+puts 'Enter the page Direct SELECTOR of the img element:'
 img = gets.chomp
 p img
 
 # 5-enter  SELECTOR of the price of product
-puts 'Enter the page SELECTOR of the price:'
+puts 'Enter the page Direct SELECTOR of the price:'
 price = gets.chomp
 p price
 
-puts 'Wait seconds ......'
-
-# Fictional method!!
-# goods = scraper.crawl(link, name, product_page, img, price)
-
-# RUN Method
-goods = scraper.crawl('https://fashion.souq.com/eg-en/fashion-best-deals/c/15693', 'h6.title a', 'h6.title a', 'a.img-link img', 'h5.price span.is')
-
-# Display Items
-goods.each do |good|
-  puts ' ------------- '
-  puts "Name    :: ".yellow + "#{good[:name]}"
-  puts "Price   :: ".yellow + "#{good[:price]}"
-  puts "img-src :: ".yellow + "#{good[:img_src]}"
-  puts "Product :: ".yellow + "#{good[:link]}"
+# 6- ASK about img src to set method
+end_loop = false
+while end_loop == false
+  puts "If the Image source is in the attr 'src' then Enter 1"
+  puts "If the Image source is in the attr 'data-src', please Enter 2"
+  puts "If the Image source is in a different attr 'data-src', please Enter 3"
+  reply = gets.chomp
+  end_loop = true if %w[1 2 3].include?(reply)
 end
 
-puts "Successfully done...".green
+# ############## un-comment this if you want to use ###############
+# # 7- Set the method
+# me = scraper.query(link)
+# goods = scraper.img_in_src(me, name, product_page, img, price) if reply == '1'
+# goods = scraper.img_in_data_src(me, name, product_page, img, price) if reply == '2'
+# if reply == "3"
+#     puts "Enter the attr name:"
+#     the_other_attr = gets.chomp
+#     goods = scraper.img_in_another_attr(me, name, product_page, img, price, the_other_attr)
+# end
+####################################################################
+
+# ############### FOR TESTING ######################################
+# 7- Set the method
+me = scraper.query('https://deals.souq.com/eg-en/smart-tvs/c/15236')
+name = 'h6.title a'
+product_page = 'h6.title a'
+img = 'a.img-link img'
+price = 'h5.price span.is'
+goods = scraper.img_in_data_src(me, name, product_page, img, price)
+###################################################################
+
+# 8- Display Items
+goods.each do |good|
+  puts ' ------------- '
+  puts 'Name    :: '.yellow + (good[:name]).to_s
+  puts 'Price   :: '.yellow + (good[:price]).to_s
+  puts 'Img-src :: '.yellow + (good[:img_src]).to_s
+  puts 'Product :: '.yellow + (good[:link]).to_s
+end
+
+puts 'Successfully done...'.green
 
 # ruby bin/scraper.rb

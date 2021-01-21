@@ -7,21 +7,65 @@ require 'colorize'
 class Scraper
   def initialize; end
 
-  def crawl(surl, sname, slink, simg_src, sprice)
+  def query(surl)
     original = HTTParty.get(surl)
     parsed = Nokogiri::HTML(original)
-    items = []
     blocks = parsed.css('div.block-grid-large') # Item cards
+    blocks
+  end
+
+  def img_in_another_attr(blocks, name, link, img_src, price, att2r)
+    puts 'Wait seconds ......'.yellow
+    items = []
     blocks.each do |block|
       item = {
-        name: block.css(sname).text.strip!,
-        link: block.css(slink)[0].attributes['href'].value,
-        img_src: block.css(simg_src)[0].attributes['data-src'].value,
-        price: block.css(sprice)[0].text.strip!.gsub("\t", '').gsub("\n", '')
+        name: block.css(name).text.strip!,
+        link: block.css(link)[0].attributes['href'].value,
+        img_src: block.css(img_src)[0].attributes[att2r].value,
+        price: block.css(price)[0].text.strip!.gsub("\t", '').gsub("\n", '')
       }
       items << item
       puts "Scrapped #{item[:name]} " + 'successfully...'.green
     end
+
+    puts '---------------------------------------------------------------'
+    puts 'DONE!'.green
+    items
+  end
+
+  def img_in_data_src(blocks, name, link, img_src, price)
+    puts 'Wait seconds ......'.yellow
+    items = []
+    blocks.each do |block|
+      item = {
+        name: block.css(name).text.strip!,
+        link: block.css(link)[0].attributes['href'].value,
+        img_src: block.css(img_src)[0].attributes['data-src'].value,
+        price: block.css(price)[0].text.strip!.gsub("\t", '').gsub("\n", '')
+      }
+      items << item
+      puts "Scrapped #{item[:name]} " + 'successfully...'.green
+    end
+
+    puts '---------------------------------------------------------------'
+    puts 'DONE!'.green
+    items
+  end
+
+  def img_in_src(blocks, name, link, img_src, price)
+    puts 'Wait seconds ......'.yellow
+    items = []
+    blocks.each do |block|
+      item = {
+        name: block.css(name).text.strip!,
+        link: block.css(link)[0].attributes['href'].value,
+        img_src: block.css(img_src)[0].attributes['src'].value,
+        price: block.css(price)[0].text.strip!.gsub("\t", '').gsub("\n", '')
+      }
+      items << item
+      puts "Scrapped #{item[:name]} " + 'successfully...'.green
+    end
+
     puts '---------------------------------------------------------------'
     puts 'DONE!'.green
     items
