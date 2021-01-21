@@ -27,7 +27,7 @@ To get a local copy up and running follow these simple example steps.
 
 - Open your terminal (CTRL + ALT + T) and clone the repository of this project.
 - `cd` to the directory 
-- Run this command `ruby bin/scraper.rb`
+- Run this command `bin/scraper.rb`
 - Enter the link of the E-commerce site.
 - Enter the element selectors of "name", "product page anchor tag", "img element of the product", "price element (p, a, div, etc...)"
 

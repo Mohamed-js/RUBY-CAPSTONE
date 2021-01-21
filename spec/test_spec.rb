@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative '../lib/scraper_class.rb'
 
 # Variables for testing
