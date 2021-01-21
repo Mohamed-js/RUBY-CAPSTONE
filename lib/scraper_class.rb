@@ -1,4 +1,5 @@
-require 'Nokogiri'
+# Class Scraper
+require 'nokogiri'
 require 'httparty'
 require 'byebug'
 require 'colorize'
