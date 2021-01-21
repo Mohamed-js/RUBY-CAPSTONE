@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative '../lib/scraper_class.rb'
 # Starting Scrapper!
 # Initialize the instance
