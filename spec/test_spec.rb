@@ -1,4 +1,9 @@
 require_relative '../lib/scraper_class.rb'
+require 'httparty'
+require 'nokogiri'
+require 'byebug'
+require 'colorize'
+
 
 # Variables for testing
 link = 'https://deals.souq.com/eg-en/smart-tvs/c/15236'
