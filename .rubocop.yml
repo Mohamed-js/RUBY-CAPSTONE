@@ -1,5 +1,4 @@
 AllCops:
-  DisabledByDefault: true
   Exclude:
     - "Guardfile"
     - "Rakefile"

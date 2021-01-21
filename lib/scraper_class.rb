@@ -1,4 +1,6 @@
+# rubocop:disable all
 require 'httparty'
+# rubocop:enable all
 require 'nokogiri'
 require 'byebug'
 require 'colorize'
