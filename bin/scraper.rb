@@ -46,7 +46,7 @@ while end_loop == false
   end_loop = true if %w[1 2 3].include?(reply)
 end
 
-# ############## un-comment this if you want to use ###############
+# ############## un-comment this for production version  ###########
 # # 7- Set the method
 # me = scraper.query(link)
 # goods = scraper.img_in_src(me, name, product_page, img, price) if reply == '1'
