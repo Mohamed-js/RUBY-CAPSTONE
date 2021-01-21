@@ -19,8 +19,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 
-Install ruby from here: [Install](https://www.ruby-lang.org/en/documentation/installation/)
-Install rspec following this guide: [Install](https://www.theodinproject.com/courses/ruby-programming/lessons/introduction-to-rspec)
+- Install ruby from here: [Install](https://www.ruby-lang.org/en/documentation/installation/)
+- Install rspec following this guide: [Install](https://www.theodinproject.com/courses/ruby-programming/lessons/introduction-to-rspec)
 
 
 ### Usage
