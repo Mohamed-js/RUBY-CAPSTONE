@@ -1,8 +1,8 @@
 # RUBY-CAPSTONE
 
-## Scruby ruby "E-commerce Web-Scrapper"
+## Scruby ruby "Web-Scrapper"
 
-This program can make scrapping to any E-commerce site. Just enter the page information and run!
+This program can make scrapping to Souq.com E-commerce site. Just enter the products' page link and run!
 
 # Screenshot 
 
@@ -33,8 +33,9 @@ This program can make scrapping to any E-commerce site. Just enter the page info
 - Clone the repository by: `git clone https://github.com/Mohamed-js/RUBY-CAPSTONE.git`
 - `cd` to the directory of the project
 - Run this command `ruby bin/scraper.rb`
-- Enter the link of the E-commerce site.
-- Follow instructions inside the program.
+- Enter the products page link of the `Souq.com` site.
+- Try this demo link "https://deals.souq.com/eg-en/smart-tvs/c/15236"
+
 
 
 ### Run tests
