@@ -9,8 +9,7 @@ class Scraper
   def query(surl)
     original = HTTParty.get(surl)
     parsed = Nokogiri::HTML(original)
-    blocks = parsed.css('div.block-grid-large') # Item cards
-    blocks
+    parsed.css('div.block-grid-large') # Item cards
   end
 
   def img_in_data_src(blocks, name, link, img_src, price)
