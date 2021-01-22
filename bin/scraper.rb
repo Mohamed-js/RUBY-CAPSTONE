@@ -20,6 +20,7 @@ puts '******************************************'
 puts '1- Enter the Souq product page link to be scraped :'
 puts ''
 puts 'hint, You can use this demo link:'
+puts '"Just copy and paste it and press enter"'
 puts 'https://deals.souq.com/eg-en/smart-tvs/c/15236'
 
 link = gets.chomp
