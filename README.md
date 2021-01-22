@@ -6,7 +6,7 @@ This program can make scrapping to Souq.com E-commerce site. Just enter the prod
 
 # Screenshot 
 
-![screenshot](./screenshot.png)
+![screenshot](./assets/screenshot.png)
 
 ## Built With
 

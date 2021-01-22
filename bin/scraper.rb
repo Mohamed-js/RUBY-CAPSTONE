@@ -18,8 +18,12 @@ puts '******************************************'
 
 # 1-enter Link of page
 puts '1- Enter the Souq product page link to be scraped :'
+puts ''
+puts 'hint, You can use this demo link:'
+puts 'https://deals.souq.com/eg-en/smart-tvs/c/15236'
+
 link = gets.chomp
-# https://deals.souq.com/eg-en/smart-tvs/c/15236
+
 
 # 2- Set the method
 me = scraper.query(link)
