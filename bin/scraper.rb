@@ -25,7 +25,6 @@ puts 'https://deals.souq.com/eg-en/smart-tvs/c/15236'
 
 link = gets.chomp
 
-
 # 2- Set the method
 me = scraper.query(link)
 name = 'h6.title a'

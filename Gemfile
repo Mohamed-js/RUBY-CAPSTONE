@@ -1,4 +1,4 @@
-gem 'rubocop'
+gem 'colorize'
 gem 'httparty'
 gem 'nokogiri'
-gem 'colorize'
+gem 'rubocop'
