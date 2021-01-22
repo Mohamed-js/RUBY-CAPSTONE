@@ -11,22 +11,23 @@ This program can make scrapping to any E-commerce site. Just enter the page info
 ## Built With
 
 - Ruby
+- Nokogiri gem
+- HTTParty gem
 - RSpec
 
-## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+### Prerequisites
 
-### Install
-
-- Install ruby from here: [Install](https://www.ruby-lang.org/en/documentation/installation/)
+- Terminal or cmdr for windows [install](https://cmder.net/)
+- Ruby: follow installation instructions from here: [Install](https://www.ruby-lang.org/en/documentation/installation/)
 - Install rspec following this guide: [Install](https://www.theodinproject.com/courses/ruby-programming/lessons/introduction-to-rspec)
 
 
 ### Usage
 
-- Open your terminal (CTRL + ALT + T) and clone the repository of this project.
-- `cd` to the directory 
+- Open your terminal or cmdr on windows.
+- Clone the repository by: `git clone https://github.com/Mohamed-js/RUBY-CAPSTONE.git`
+- `cd` to the directory of the project
 - Run this command `bin/scraper.rb`
 - Enter the link of the E-commerce site.
 - Enter the element selectors of "name", "product page anchor tag", "img element of the product", "price element (p, a, div, etc...)"
@@ -58,6 +59,8 @@ Give a ⭐️ if you like this project!
 
 - Microverse
 - Notion
+- HTTParty
+- Nokogiri
 
 ## 📝 License
 
