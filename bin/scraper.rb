@@ -5,19 +5,22 @@ require_relative '../lib/scraper_class'
 # Initialize the instance
 scraper = Scraper.new
 
-h= 
-
 # 1-enter Link of page
 puts '1- Enter the product page link to be scraped :'
 puts ''
-puts 'hint, You can use this demo link:'
-puts '"Just copy and paste it and press enter"'
+link = gets.chomp
 
-# link = gets.chomp
+puts '2- Enter the category name :'
+puts ''
+category = gets.chomp
+
+puts '3- Enter the category_id :'
+puts ''
+category_id = gets.chomp
 
 # 2- Set the method
-me = scraper.query("")
+me = scraper.query(link)
 
-# goods = scraper.img_in_src(me)
+goods = scraper.img_in_src(me, 'ًBaby Care', category, category_id)
 
-# p goods
+p goods

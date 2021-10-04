@@ -1,28 +1,31 @@
 require 'nokogiri'
 require 'httparty'
 require 'colorize'
+require 'watir'
 
 # Class Scraper
 class Scraper
   def initialize; end
 
   def query(original)
-    # original = HTTParty.get(surl)
-    parsed = Nokogiri::HTML(original)
-    parsed.css('div.products section.product') # Item cards
+    browser = Watir::Browser.new
+    browser.goto original
+    # Wait until images load!
+    sleep(10)
+    parsed = Nokogiri::HTML.parse(browser.html)
+    parsed.css('div.products section.product')
   end
 
-  def img_in_src(blocks)
+  def img_in_src(blocks, cat, sub_cat, sub_cat_id)
     puts 'Wait seconds ......'.yellow
     items = []
     blocks.each do |block|
-      cat = block.attributes['class'].value.split[5].slice(12..-1)
       item = {
         name: block.css('.product-wrapper .meta-wrapper h3.heading-title').text,
         image_data: block.css('.product-wrapper .thumbnail-wrapper img')[0].attributes['src'].value,
-        category: 'skin care',
-        sub_category: 'facial care',
-        sub_category_id: 10
+        category: cat,
+        sub_category: sub_cat,
+        sub_category_id: sub_cat_id
       }
       items << item
       puts "Scrapped #{item[:name]} " + 'successfully...'.green
