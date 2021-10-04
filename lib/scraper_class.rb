@@ -6,21 +6,23 @@ require 'colorize'
 class Scraper
   def initialize; end
 
-  def query(surl)
-    original = HTTParty.get(surl)
+  def query(original)
+    # original = HTTParty.get(surl)
     parsed = Nokogiri::HTML(original)
-    parsed.css('div.block-grid-large') # Item cards
+    parsed.css('div.products section.product') # Item cards
   end
 
-  def img_in_data_src(blocks, name, link, img_src, price)
+  def img_in_src(blocks)
     puts 'Wait seconds ......'.yellow
     items = []
     blocks.each do |block|
+      cat = block.attributes['class'].value.split[5].slice(12..-1)
       item = {
-        name: block.css(name).text.strip!,
-        link: block.css(link)[0].attributes['href'].value,
-        img_src: block.css(img_src)[0].attributes['data-src'].value,
-        price: block.css(price)[0].text.strip!.gsub("\t", '').gsub("\n", '')
+        name: block.css('.product-wrapper .meta-wrapper h3.heading-title').text,
+        image_data: block.css('.product-wrapper .thumbnail-wrapper img')[0].attributes['src'].value,
+        category: 'skin care',
+        sub_category: 'facial care',
+        sub_category_id: 10
       }
       items << item
       puts "Scrapped #{item[:name]} " + 'successfully...'.green

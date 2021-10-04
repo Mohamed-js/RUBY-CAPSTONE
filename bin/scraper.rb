@@ -17,21 +17,18 @@ puts ''
 puts '******************************************'
 
 # 1-enter Link of page
-puts '1- Enter the Souq product page link to be scraped :'
+puts '1- Enter the product page link to be scraped :'
 puts ''
 puts 'hint, You can use this demo link:'
 puts '"Just copy and paste it and press enter"'
-puts 'https://deals.souq.com/eg-en/smart-tvs/c/15236'
 
 link = gets.chomp
 
 # 2- Set the method
-me = scraper.query(link)
-name = 'h6.title a'
-product_page = 'h6.title a'
-img = 'a.img-link img'
-price = 'h5.price span.is'
-goods = scraper.img_in_data_src(me, name, product_page, img, price)
+me = scraper.query("")
 
-# 3- Display Items
-display_goods(goods)
+goods = scraper.img_in_src(me)
+
+p goods
+
+
