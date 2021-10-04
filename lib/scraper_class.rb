@@ -25,7 +25,7 @@ class Scraper
         image_data: block.css('.product-wrapper .thumbnail-wrapper img')[0].attributes['src'].value,
         category: cat,
         sub_category: sub_cat,
-        sub_category_id: sub_cat_id
+        cosm_cat_id: sub_cat_id
       }
       items << item
       puts "Scrapped #{item[:name]} " + 'successfully...'.green

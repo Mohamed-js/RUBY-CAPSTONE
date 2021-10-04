@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require 'csv'
 require_relative '../lib/scraper_class'
 # Starting Scrapper!
 # Initialize the instance
@@ -7,20 +7,25 @@ scraper = Scraper.new
 
 # 1-enter Link of page
 puts '1- Enter the product page link to be scraped :'
-puts ''
 link = gets.chomp
 
 puts '2- Enter the category name :'
-puts ''
 category = gets.chomp
 
 puts '3- Enter the category_id :'
-puts ''
 category_id = gets.chomp
 
-# 2- Set the method
+
 me = scraper.query(link)
+drugs = scraper.img_in_src(me, 'ًBaby Care', category, category_id)
 
-goods = scraper.img_in_src(me, 'ًBaby Care', category, category_id)
 
-p goods
+
+
+# Write the results
+
+CSV.open("cosmo.csv", "w") do |csv|
+    drugs.each do |drug|
+        csv << [drug[:name], drug[:image_data], drug[:category], drug[:sub_category], drug[:cosm_cat_id]]
+    end
+end
