@@ -29,6 +29,6 @@ cosmetics
 
 CSV.open("cosmo.csv", "a") do |csv|
     cosmetics.each do |drug|
-        csv << [drug[:name], drug[:ar_name], drug[:image_data], drug[:category], drug[:sub_category], drug[:sub_category_id]]
+        csv << [drug[:name], drug[:ar_name], drug[:image], drug[:category], drug[:sub_category], drug[:sub_category_id]]
     end
 end
