@@ -30,20 +30,9 @@ class Scraper
       items << item
       puts "Scrapped #{item[:name]} " + 'successfully...'.green
     end
-
     puts '---------------------------------------------------------------'
     puts 'DONE!'.green
     items
   end
 end
-
-def display_goods(goods)
-  goods.each do |good|
-    puts ' ------------- '
-    puts 'Name    :: '.yellow + (good[:name]).to_s
-    puts 'Price   :: '.yellow + (good[:price]).to_s
-    puts 'Img-src :: '.yellow + (good[:img_src]).to_s
-    puts 'Product :: '.yellow + (good[:link]).to_s
-  end
-  puts 'Successfully done...'.green
 end

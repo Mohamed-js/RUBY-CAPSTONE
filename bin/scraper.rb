@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require 'csv'
 require_relative '../lib/scraper_class'
-# Starting Scrapper!
-# Initialize the instance
+
 scraper = Scraper.new
 
 
