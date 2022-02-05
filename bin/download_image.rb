@@ -1,5 +1,6 @@
 require "open-uri"
 require 'csv'
+require "down"
 
 all_table = CSV.parse(File.read("cosmo.csv"), headers: true)
 
@@ -16,7 +17,5 @@ all_table = CSV.parse(File.read("cosmo.csv"), headers: true)
     url = all_table[i]['image']
     img_name = url.split('/')[5..7].join('/')
     img_name_new = url.split('/')[5..7].join
-    File.open("images/#{img_name_new}", 'wb') do |f|
-        f.write open("https://www.yodawy.com/wp-content/uploads/#{img_name}").read 
-    end
+    Down.download("https://www.yodawy.com/wp-content/uploads/#{img_name}", destination: "./images")
 end
