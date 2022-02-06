@@ -12,7 +12,8 @@ links.each_with_index do |link, i|
 
     # Write the results
     CSV.open("shein.csv", "a") do |csv|
-        drugs.each do |drug|
+        120.times do |i|
+            drug = drugs[i]
             csv << [drug[:id], drug[:cat_id], drug[:name], drug[:us_price], drug[:img], drug[:link]]
         end
     end
